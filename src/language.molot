@@ -1,0 +1,7 @@
+number          : /-?[0-9]+(\\.[0-9]+)?/ ;
+symb_operator    : '+' | '-' | '*' | '/' ;
+text_operator    : \"mul\" | \"div\" | \"sub\" | \"add\" ;
+arr_operator     : \"min\" | \"max\" | \"avg\" | \"std\" ;
+operator         : <symb_operator> | <text_operator> | <arr_operator> ;
+expr             : <number> | '(' <operator> <expr>+ ')' ;
+molot            : /^/ <operator> <expr>+ /$/  ;
